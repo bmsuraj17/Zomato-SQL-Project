@@ -185,6 +185,7 @@ from RankedRestaurants
 where ranking <= 5
 order by 2;
 
+#Locations Based on the Percentage of Restaurants Offering Online Orders
 SELECT location, online_order_percentage
 from 
 ( SELECT location, round(COUNT(case when online_order = 'Yes' then 1 end) * 100 / COUNT(*),2)
